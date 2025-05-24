@@ -59,6 +59,7 @@
             margin: 25px 0;
             font-size: 18px;
             transition: background 0.3s;
+            cursor: pointer;
         }
         .telegram-button:hover {
             background: #ef233c;
@@ -95,25 +96,29 @@
 
         <p><em>"Gracias a estos tipos, salvé mi negocio. ¡Son posta!"</em> — Juan, Rosario</p>
 
-      a href="#" class="telegram-button" onclick="redirectToTelegram()">¡QUIERO MI PLATA AHORA!</
+        <!-- КНОПКА — без видимой ссылки -->
+        <div class="telegram-button" onclick="redirectToTelegram()">¡QUIERO MI PLATA AHORA!</div>
         
         <div class="countdown">Redireccionando a Telegram en <span id="timer">5</span> segundos...</div>
     </div>
 
-   <script>
-    function redirectToTelegram() {
-        window.location.href = "https://t.me/Veronica_especialista";
-    }
+    <script>
+        const telegramUrl = "https://t.me/Veronica_especialista";
 
-    // Авторедирект через 5 секунд
-    let timeLeft = 5;
-    const timerElement = document.getElementById('timer');
-    const countdown = setInterval(() => {
-        timeLeft--;
-        timerElement.textContent = timeLeft;
-        if (timeLeft <= 0) {
-            clearInterval(countdown);
-            redirectToTelegram();
+        function redirectToTelegram() {
+            window.location.href = telegramUrl;
         }
-    }, 1000);
-</script>
+
+        let timeLeft = 5;
+        const timerElement = document.getElementById('timer');
+        const countdown = setInterval(() => {
+            timeLeft--;
+            timerElement.textContent = timeLeft;
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                redirectToTelegram();
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
