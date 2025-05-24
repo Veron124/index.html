@@ -59,7 +59,6 @@
             margin: 25px 0;
             font-size: 18px;
             transition: background 0.3s;
-            cursor: pointer;
         }
         .telegram-button:hover {
             background: #ef233c;
@@ -87,28 +86,21 @@
         
         <div class="benefits">
             <ul>
-                <li>✅ Aprobación <strong>en 10 minutos</strong> (posta, boludo)</li>
-                <li>✅ Sin garantes ni papeleo infinito</li>
-                <li>✅ Plata directo a tu cuenta</li>
-                <li>✅ ¡Primer préstamo SIN INTERESES!</li>
+                <li>Aprobación <strong>en 10 minutos</strong></li>
+                <li>Sin garantes ni papeleo</li>
+                <li>Plata directo a tu cuenta</li>
+                <li>¡Primer préstamo SIN INTERESES!</li>
             </ul>
         </div>
 
         <p><em>"Gracias a estos tipos, salvé mi negocio. ¡Son posta!"</em> — Juan, Rosario</p>
 
-        <!-- КНОПКА — без видимой ссылки -->
-        <div class="telegram-button" onclick="redirectToTelegram()">¡QUIERO MI PLATA AHORA!</div>
+        <a href="https://t.me/Veronica_especialista" class="telegram-button">¡QUIERO MI PLATA AHORA!</a>
         
         <div class="countdown">Redireccionando a Telegram en <span id="timer">5</span> segundos...</div>
     </div>
 
     <script>
-        const telegramUrl = "https://t.me/Veronica_especialista";
-
-        function redirectToTelegram() {
-            window.location.href = telegramUrl;
-        }
-
         let timeLeft = 5;
         const timerElement = document.getElementById('timer');
         const countdown = setInterval(() => {
@@ -116,9 +108,10 @@
             timerElement.textContent = timeLeft;
             if (timeLeft <= 0) {
                 clearInterval(countdown);
-                redirectToTelegram();
+                window.location.href = "https://t.me/Veronica_especialista";
             }
         }, 1000);
     </script>
 </body>
 </html>
+
